@@ -23,7 +23,6 @@ public class Unit5PgmLab2 {
 		System.out.print("Enter a year: ");
 		int year = input.nextInt();	
 		
-		//display the monthly calendar
 		System.out.println("\n");
 		printMonthCalendar(month, year);
 		System.out.println("\n");
@@ -31,7 +30,6 @@ public class Unit5PgmLab2 {
 		input.close();
 	}
 
-	// method for printing a calculator for the month and year
 	public static void printMonthCalendar( int m, int y )
 	{
 		printMonthHeader(m, y);
@@ -39,7 +37,6 @@ public class Unit5PgmLab2 {
 
 	}
 
-	// method to print the header information
 	public static void printMonthHeader( int m, int y )
 	{
 		String monthName = getMonthName(m);
@@ -63,10 +60,8 @@ public class Unit5PgmLab2 {
 
 		do
 		{
-			//loop for each row in the display
 			for (int j=0; j<7 && startNum <= numDays; j++)
 			{
-				//loop for each column in the display
 				if ((startNum == 1) && (j < startPos))
 					System.out.printf("    ");
 				else
@@ -82,7 +77,6 @@ public class Unit5PgmLab2 {
 
 	}
 
-	// method for getting the number of days in the month
 	public static int getNumDaysinMonth( int m, int y )
 	{
 		int numDays = 0;
@@ -173,37 +167,23 @@ public class Unit5PgmLab2 {
 		return name;
 	}
 
-	/*
-	  The method getStartDay() implements Zeller's Algorithm for determining the day of the
-	  week the first day of a month is. The method adjusts Zeller's numbering scheme
-	  for day of week ( 0=Saturday, ..., 6=Friday ) to conform to a day of week number
-	  that corresponds to ISO conventions (i.e., 1=Monday, ..., 7=Sunday)
 
-	  Pre-Conditions: The month value, m,  is 1-12
-	                        The day value, d, is 1-31, or 1-28, 1-29 for February
-	                        The year value, y, is the full year (e.g., 2012)
 
-	 Post-Conditions: A value of 1-7 is returned, representing the first day of the month
-	                        1 = Monday, ..., 7 = Sunday
-	 */
-
-	// method for getting the start day
 	public static int getStartDay( int m, int d, int y )
 	{
-		// Adjust month number & year to fit Zeller's numbering system
 		if ( m < 3 ) 
 		{
 			m = m + 12;
 			y = y - 1;
 		}
 
-		int k = y % 100;      // Calculate year within century
-		int j = y / 100;      // Calculate century term
-		int h = 0;            // Day number of first day in month 'm'
+		int k = y % 100;      
+		int j = y / 100;      
+		int h = 0;            
 
 		h = ( d + ( 13 * ( m + 1 ) / 5 ) + k + ( k / 4 ) + ( j / 4 ) + ( 5 * j ) ) % 7;
 
-		// Convert Zeller's value to ISO value (1 = Mon, ... , 7 = Sun )
+	
 		int dayNum = ( ( h + 5 ) % 7 ) + 1;     
 
 		return dayNum;
