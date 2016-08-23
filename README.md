@@ -6,12 +6,12 @@ Fun assignment I did for my AP Computer Science class
 To download and run
 
 
-"git clone https://github.com/rogerramesh/CalendarFuture.git"
+`git clone https://github.com/rogerramesh/CalendarFuture.git`
 
 
-"cd CalendarFuture"
+`cd CalendarFuture`
 
 
-"java Unit5PgmLab2"
+`java Unit5PgmLab2`
 
 
