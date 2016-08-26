@@ -29,7 +29,7 @@ public class Unit5PgmLab2 {
 
 		input.close();
 	}
-
+// method for printing a calculator for the month and year
 	public static void printMonthCalendar( int m, int y )
 	{
 		printMonthHeader(m, y);
@@ -76,6 +76,7 @@ public class Unit5PgmLab2 {
 		}while(startNum < numDays);
 
 	}
+	// method for getting the number of days in the month
 
 	public static int getNumDaysinMonth( int m, int y )
 	{
